@@ -7,6 +7,10 @@ const SplashViewBody({ Key? key }) : super(key: key);
   @override
   Widget build(BuildContext context){
     return Column(
+  
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,//ممكن تاخدوwidth اكبر children    تاخد
+
       children: [
         Image.asset(AssetsData.logo)
       ],
