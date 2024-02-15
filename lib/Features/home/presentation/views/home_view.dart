@@ -6,6 +6,8 @@ const HomeView({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context){
-    return HomeViewBody() ;
+    return Scaffold(
+      body: HomeViewBody(),
+    ) ;
   }
 }
