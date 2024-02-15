@@ -13,9 +13,9 @@ class HomeViewBody extends StatelessWidget {
     return const Column(
       children: [
         CustomAppBar(),
-        SizedBox(
-          height: 10,
-        ),
+        // SizedBox(
+        //   height: 10,
+        // ),
         ListViewItem()
       ],
     );

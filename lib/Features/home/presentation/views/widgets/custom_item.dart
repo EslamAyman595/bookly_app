@@ -6,9 +6,11 @@ class CustomItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * .23,
-      child: AspectRatio(
+     return 
+    // SizedBox(
+    //   height: MediaQuery.of(context).size.height * .23,
+    //   child: 
+     AspectRatio(
         aspectRatio:
             2.7/ 4, //sized boxبيجفظ على نسبة الطول والعرض حتى لو اتغير
         child: Container(
@@ -22,7 +24,7 @@ class CustomItem extends StatelessWidget {
                 ),
               )),
         ),
-      ),
+      
     );
   }
 }
