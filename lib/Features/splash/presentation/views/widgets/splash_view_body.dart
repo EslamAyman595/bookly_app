@@ -12,7 +12,11 @@ const SplashViewBody({ Key? key }) : super(key: key);
       crossAxisAlignment: CrossAxisAlignment.stretch,//ممكن تاخدوwidth اكبر children    تاخد
 
       children: [
-        Image.asset(AssetsData.logo)
+        Image.asset(AssetsData.logo),
+        SizedBox(
+          height: 5,
+        ),
+      const   Text('Read Free Books ' ,textAlign: TextAlign.center,style: TextStyle(fontSize:20 ),)
       ],
     );
   }
