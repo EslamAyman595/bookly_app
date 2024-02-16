@@ -12,7 +12,7 @@ class CustomItem extends StatelessWidget {
     //   child: 
      AspectRatio(
         aspectRatio:
-            2.7/ 4, //sized boxبيجفظ على نسبة الطول والعرض حتى لو اتغير
+            2.5/ 3.5, //sized boxبيجفظ على نسبة الطول والعرض حتى لو اتغير
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
