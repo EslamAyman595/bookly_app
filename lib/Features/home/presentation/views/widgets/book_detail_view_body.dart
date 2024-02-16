@@ -22,7 +22,7 @@ class BookDetailViewBody extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width * .15),
+                horizontal: MediaQuery.of(context).size.width * .2),
             child: CustomItem(),
           ),
           SizedBox(
@@ -30,11 +30,17 @@ class BookDetailViewBody extends StatelessWidget {
           ),
           Text(
             'The jungle Book',
-            style: Styles.textStyle30,
+            style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
           ),
-          Text(
-            'Reward cliping',
-            style: Styles.textStyle14.copyWith(),
+          Opacity(
+            opacity: .7,
+            child: Text(
+              'Reward cliping',
+              style: Styles.textStyle18.copyWith(
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.w500
+              ),
+            ),
           ),
           BookRating(),
         ],
