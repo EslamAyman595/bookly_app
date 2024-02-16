@@ -1,5 +1,6 @@
 import 'package:bookly_app/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_book_detalis_appbar.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/custom_item.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -16,29 +17,16 @@ class BookDetailViewBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CustomBookDetalisAppbar(),
-          Center(
-            child: SizedBox(
-              height: 200,
-              width: 180,
-              child: AspectRatio(
-                aspectRatio:
-                    2.5 / 3.5, //sized boxبيجفظ على نسبة الطول والعرض حتى لو اتغير
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.red,
-                      image: const DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage(
-                          AssetsData.test,
-                        ),
-                      )),
-                ),
-              ),
-            ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * .15),
+            child: CustomItem(),
           ),
           SizedBox(
-            height: 30,
+            height: 10,
           ),
           Text(
             'The jungle Book',
