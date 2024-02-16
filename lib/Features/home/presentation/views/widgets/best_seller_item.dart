@@ -1,3 +1,4 @@
+import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,7 @@ class BestSellerItem extends StatelessWidget {
             width: 30,
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 width: MediaQuery.of(context).size.width * .5,
@@ -40,6 +42,23 @@ class BestSellerItem extends StatelessWidget {
                   style: Styles.textStyle20,
                 ),
               ),
+                const SizedBox(
+            height: 3,
+          ),
+              Text(
+                'K J drawing',
+                style: Styles.textStyle14.copyWith(fontFamily: kGTSetraFine),
+              ),
+              const SizedBox(
+            height: 3,
+          ),
+              Row(
+                children: [
+                  Text(
+                    '999,33%',
+                    style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold),),
+                ],
+              )
             ],
           )
         ],
