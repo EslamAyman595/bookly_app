@@ -1,0 +1,18 @@
+import 'package:flutter/material.dart';
+
+class CustomBookDetalisAppbar extends StatelessWidget {
+const CustomBookDetalisAppbar({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context){
+    return Row(
+      children: [
+         IconButton(onPressed: (){}, icon:const Icon(Icons.close)),
+       const  Spacer(),
+        IconButton(onPressed: (){}, icon:const Icon(Icons.shopping_cart_outlined)),
+
+      ],
+
+    );
+  }
+}
