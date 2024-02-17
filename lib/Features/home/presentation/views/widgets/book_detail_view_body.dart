@@ -13,7 +13,11 @@ class BookDetailViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+     return CustomScrollView(
+      slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,//scrollاللى فية بتعمل list view  و طالما scrollاللى جوة مش عايزة تعمل item
+            child:Padding(
       padding: EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         //  mainAxisAlignment: MainAxisAlignment.start,
@@ -48,9 +52,11 @@ class BookDetailViewBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
           ),
           const BookAction(),
-          const SizedBox(
-            height: 10,
-          ),
+        const   Expanded(
+             child: SizedBox(
+              height: 10,
+                       ),
+           ),
           Align(
             alignment: Alignment.centerLeft,
             child: Text(
@@ -64,6 +70,13 @@ class BookDetailViewBody extends StatelessWidget {
           SimilairBooksListView(),
         ],
       ),
-    );
+    ) ,
+          )
+      ],
+     );
+
+
+    
+    
   }
 }
