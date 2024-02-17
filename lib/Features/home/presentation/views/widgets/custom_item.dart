@@ -6,25 +6,23 @@ class CustomItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     return 
-    // SizedBox(
-    //   height: MediaQuery.of(context).size.height * .23,
-    //   child: 
-     AspectRatio(
-        aspectRatio:
-            2.7/ 3.2, //sized boxبيجفظ على نسبة الطول والعرض حتى لو اتغير
-        child: Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              color: Colors.red,
-              image:const DecorationImage(
-                fit: BoxFit.fill,
-                image: AssetImage(
-                  AssetsData.test,
-                ),
-              )),
-        ),
-      
+    return
+        // SizedBox(
+        //   height: MediaQuery.of(context).size.height * .23,
+        //   child:
+        AspectRatio(
+      aspectRatio: 2 / 2.3, //sized boxبيجفظ على نسبة الطول والعرض حتى لو اتغير
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: Colors.red,
+            image: const DecorationImage(
+              fit: BoxFit.fill,
+              image: AssetImage(
+                AssetsData.test,
+              ),
+            )),
+      ),
     );
   }
 }
