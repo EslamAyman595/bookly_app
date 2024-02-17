@@ -1,8 +1,10 @@
+import 'package:bookly_app/Features/home/presentation/views/widgets/book_action.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_book_detalis_appbar.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_item.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailViewBody extends StatelessWidget {
@@ -11,14 +13,14 @@ class BookDetailViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         //mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CustomBookDetalisAppbar(),
           SizedBox(
-            height: 10,
+            height: 5,
           ),
           Padding(
             padding: EdgeInsets.symmetric(
@@ -37,14 +39,13 @@ class BookDetailViewBody extends StatelessWidget {
             child: Text(
               'Reward cliping',
               style: Styles.textStyle18.copyWith(
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.w500
-              ),
+                  fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
             ),
           ),
-        const  BookRating(
+          const BookRating(
             mainAxisAlignment: MainAxisAlignment.center,
           ),
+          const BookAction(),
         ],
       ),
     );
