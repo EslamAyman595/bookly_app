@@ -3,12 +3,13 @@ import 'package:bookly_app/Features/home/data/repos/home_repo.dart';
 import 'package:bookly_app/core/errors/failure.dart';
 import 'package:bookly_app/core/utils/api_service.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class HomeRepoImpl implements HomeRepo{
   final ApiService apiService;
    HomeRepoImpl( this.apiService);
   @override
-  Future<Either<Faliure, List<BookModel>>> fetchNewesedBooks() async{
+  Future<Either<Failure, List<BookModel>>> fetchNewesedBooks() async{
      try {
   var data = await apiService.get(endPoints: 'volumes?Filtering=free-ebooks&q=subject:Programming&Sorting=newest');
 
@@ -18,13 +19,22 @@ class HomeRepoImpl implements HomeRepo{
     
   }
   return right(books);
-}  catch (e) {
-  return left(ServiceFaliure());
-}
+}catch (e) {
+      // ignore: deprecated_member_use
+      if (e is DioError) {
+        return left(
+          ServerFailure.fromDioError(e),
+        );
+      }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
+    }
   }
-
   @override
-  Future<Either<Faliure, List<BookModel>>> fetchFeaturesBooks() {
+  Future<Either<Failure, List<BookModel>>> fetchFeaturesBooks() {
     // TODO: implement fetchFeaturesBooks
     throw UnimplementedError();
   }
