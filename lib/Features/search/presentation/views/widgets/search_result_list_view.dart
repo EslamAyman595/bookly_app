@@ -14,7 +14,8 @@ const SearchResultListView({ Key? key }) : super(key: key);
       itemBuilder: (context, index) {
         return const Padding(
           padding:  EdgeInsets.symmetric(vertical: 10),
-          child: BookListViewItem(),
+         // child: BookListViewItem(),
+         child: Text('bhvg'),
         );
       },
         );

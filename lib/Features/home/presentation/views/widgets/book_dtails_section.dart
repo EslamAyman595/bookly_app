@@ -33,7 +33,10 @@ const BookDtailsSection({ Key? key }) : super(key: key);
                   fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
             ),
           ),
-          const BookRating(
+           BookRating(
+            rating: 5,
+            count: 250,
+
             mainAxisAlignment: MainAxisAlignment.center,
           ),
           const BookAction(),
