@@ -10,7 +10,7 @@ import 'package:go_router/go_router.dart';
 
 class BookListViewItem extends StatelessWidget {
   const BookListViewItem({Key? key, required this.bookModel}) : super(key: key);
- final BookModel bookModel;
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -21,7 +21,8 @@ class BookListViewItem extends StatelessWidget {
         height: 130,
         child: Row(
           children: [
-            CustomItem(imageUrl:bookModel.volumeInfo.imageLinks.thumbnail ),
+            CustomItem(
+                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? ''),
             const SizedBox(
               width: 30,
             ),
@@ -31,34 +32,36 @@ class BookListViewItem extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
-                    child:  Text(
-                     bookModel.volumeInfo.title!,
+                    child: Text(
+                      bookModel.volumeInfo.title!,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.textStyle20,
                     ),
                   ),
-                    const SizedBox(
-                height: 3,
-              ),
+                  const SizedBox(
+                    height: 3,
+                  ),
                   Text(
                     bookModel.volumeInfo.authors![0],
-                    style: Styles.textStyle14.copyWith(fontFamily: kGTSetraFine),
+                    style:
+                        Styles.textStyle14.copyWith(fontFamily: kGTSetraFine),
                   ),
                   const SizedBox(
-                height: 3,
-              ),
+                    height: 3,
+                  ),
                   Expanded(
                     child: Row(
                       children: [
                         Text(
                           'Free',
-                          style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold),),
-      
-                         const  Spacer(),
-                           BookRating(
-                          rating: bookModel.volumeInfo.averageRating?? 0,
-                          count: bookModel.volumeInfo.ratingsCount?? 0 ,
+                          style: Styles.textStyle20
+                              .copyWith(fontWeight: FontWeight.bold),
+                        ),
+                        const Spacer(),
+                        BookRating(
+                          rating: bookModel.volumeInfo.averageRating?.round() ??0,
+                          count: bookModel.volumeInfo.ratingsCount ?? 0,
                         ),
                       ],
                     ),
