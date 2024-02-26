@@ -42,7 +42,9 @@ final BookModel book;
 
             mainAxisAlignment: MainAxisAlignment.center,
           ),
-          const BookAction(),
+           BookAction(
+            bookModel: book,
+           ),
       ],
     );
   }
