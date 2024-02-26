@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/book_action.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/book_dtails_section.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/book_rating.dart';
@@ -10,8 +11,8 @@ import 'package:bookly_app/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailViewBody extends StatelessWidget {
-  const BookDetailViewBody({Key? key}) : super(key: key);
-
+  const BookDetailViewBody({Key? key, required this.bookModel}) : super(key: key);
+final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -20,14 +21,16 @@ class BookDetailViewBody extends StatelessWidget {
           hasScrollBody:
               false, //scrollاللى فية بتعمل list view  و طالما scrollاللى جوة مش عايزة تعمل item
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding:const EdgeInsets.symmetric(horizontal: 15),
             child: Column(
               children: [
                 const CustomBookDetalisAppbar(),
                 const SizedBox(
                   height: 5,
                 ),
-                const BookDtailsSection(),
+                 BookDtailsSection(
+                  book: bookModel,
+                ),
                 const Expanded(
                   child: SizedBox(
                     height: 5,
