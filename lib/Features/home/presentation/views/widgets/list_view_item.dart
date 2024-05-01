@@ -25,7 +25,7 @@ class FeaturedBooksListView extends StatelessWidget {
               physics:const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 6),
+                  padding:const EdgeInsets.symmetric(horizontal: 6),
                   child: GestureDetector(
                     onTap: () {
                    GoRouter.of(context).push(AppRouter.KBookDetailView,extra: state.books[index]);
